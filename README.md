@@ -46,6 +46,8 @@ Class photography:
 This class coordinates the details , its job is to link a specific client to a specific venue and list the services.
 
 Class booking: 
+
 •	Responsibility: Process payments.
+
 This class calculates the final bill .
 
