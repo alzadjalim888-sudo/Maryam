@@ -1,4 +1,5 @@
 Brief explanation of each class and its responsibility :
+
 	Class person 
 •	Responsibility :Stores core identity data 
 This is the base class(parent class) it collects general information related to all   individuals such as  (Name, phone number, email) .
