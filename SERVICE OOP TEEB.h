@@ -1,6 +1,4 @@
-//
-// Created by lenovo on 12 May 2026.
-//
+
 
 #ifndef UNTITLED2SERVICE_OOP_SERVICE_OOP_TEEB_H
 #define UNTITLED2SERVICE_OOP_SERVICE_OOP_TEEB_H
