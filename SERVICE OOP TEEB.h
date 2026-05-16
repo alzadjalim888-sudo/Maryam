@@ -15,6 +15,7 @@ public:
     Service(int id, double p); 
 
     virtual double calculeteprice()=0; //pure virtual
+    virtual ~service(){}
 };
 
 class catring:public Service { // child class
