@@ -23,3 +23,4 @@ void display();
 void total_price();
 ~Booking();
 };
+#endif
