@@ -12,5 +12,6 @@ private:
 public:
     photography(int num_pic){number_of_pic=num_pic;}// constructer
     double calculateprice()override;
+    void display();
 };
 #endif //DESKTOP_PHOTOGRAPHY_H
