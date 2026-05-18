@@ -30,4 +30,10 @@ double photography::calculateprice() {
 
 }
 
+void photography::display(){
+    cout<<"______photography service_____"<<endl;
+    cout<<"serviceID:"<<serviceID<<endl;
+    cout<<"number of pictures:"<<number_of_pic<<endl;
+    cout<<"price:"<<calculateprice()<<endl;
+}
 
