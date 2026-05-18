@@ -10,6 +10,8 @@ void Booking::total_Price() {
 
     total += entertainment.calculatePrice();
     total += decoration.calculatePrice();
+    total+=catring.calculatPrice();
+    total+=photography.calculatPrice();
     total_price = total;
 }
 void Booking:: display(){
