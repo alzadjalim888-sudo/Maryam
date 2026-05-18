@@ -1,6 +1,3 @@
-//
-// Created by lenovo on 18 May 2026.
-//
 
 #ifndef DESKTOP_CATRING_H
 #define DESKTOP_CATRING_H
@@ -16,6 +13,7 @@ public:
     catring(int num){num_of_people=num;} // constructer
 
     double calculeteprice()override;
+    void display();
 };
 
 
