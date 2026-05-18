@@ -10,7 +10,7 @@ void Booking::total_Price() {
 
     total += entertainment.calculatePrice();
     total += decoration.calculatePrice();
-    totalCost = total;
+    total_price = total;
 }
 void Booking:: display(){
     cout<<"=====your total bill detail====="<<endl;
@@ -18,5 +18,5 @@ void Booking:: display(){
     entertainment.display()<<endl;
     decoration.display()<<endl;
     cout<<"======total cost======"<<endl;
-    cout<<totalCost<<endl;
+    cout<<total_price<<endl;
 }
