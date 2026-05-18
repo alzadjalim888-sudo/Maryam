@@ -18,3 +18,10 @@ double catring::calculateprice() {
             break;
     }
 }
+
+void catring::display(){
+    cout<<"______catring service______"<<endl;
+    cout<<"serviceID:"<<serviceID<<endl;
+    cout<<"number of people:"<<num_of_people<<endl;
+    cout<<"price:"<<calculateprice()<<endl;
+}
