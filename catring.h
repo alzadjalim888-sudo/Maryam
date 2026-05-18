@@ -10,10 +10,13 @@ class catring:public Service { // child class
 private:
     int num_of_people;
 public:
-    catring(int num){num_of_people=num;} // constructer
+    catring(int num,int id){
+        num_of_people=num;
+        serviceID=id;   } // constructer
 
     double calculeteprice()override;
     void display();
+    ~catring();
 };
 
 
