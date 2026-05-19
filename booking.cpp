@@ -3,16 +3,23 @@
 #include <iostream>
 using namespace std;
 
-void Booking::total_Price() {
-    double total = 0;
+Booking::Booking():
+entertainment(0, 0.0, false, ""),
+    decoration(0, 0.0, false, ""),
+    photography(0),
+    catring(0),
+    total(0) {
+}
+Booking::~Booking() {
+}
 
-    // add each class cost one by one
-
+double Booking::total_Price() {
+    total = 0;
     total += entertainment.calculatePrice();
     total += decoration.calculatePrice();
     total+=catring.calculatPrice();
     total+=photography.calculatPrice();
-    total_price = total;
+    return total;
 }
 void Booking:: display(){
     cout<<"=====your total bill detail====="<<endl;
@@ -20,5 +27,5 @@ void Booking:: display(){
     entertainment.display()<<endl;
     decoration.display()<<endl;
     cout<<"======total cost======"<<endl;
-    cout<<total_price<<endl;
+    cout<<"Total:$"<<total_Price<<endl;
 }
