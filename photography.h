@@ -1,18 +1,20 @@
-//
-// Created by lenovo on 18 May 2026.
-//
 
 #ifndef DESKTOP_PHOTOGRAPHY_H
 #define DESKTOP_PHOTOGRAPHY_H
-#include"service_class.h"
 
-class photography:public Service { // child class
+#include "service_class.h"
+
+class Photography : public Service {
 private:
     int num_of_pic;
+    double price;
+
 public:
-    photography(int num_pic){number_of_pic=num_pic;}// constructer
-    double calculateprice()override;
-    void display();
-    ~photography();
+    Photography(int num_pic);
+
+    double calculatePrice() override; 
+    void display();                    
+    ~Photography();
 };
-#endif //DESKTOP_PHOTOGRAPHY_H
+
+#endif // DESKTOP_PHOTOGRAPHY_H
