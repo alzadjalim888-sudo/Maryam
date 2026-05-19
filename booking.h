@@ -20,12 +20,15 @@ private:
 Event event;
 Entertainment entertainment;
 Decoration decoration;
-Service service;
+Photography photography;//composetion
+Catring catring;
 Venue venue;
+double total;
+
 public:
 Booking();
 void display();
-void total_price();
+double total_price();
 ~Booking();
 };
 #endif
