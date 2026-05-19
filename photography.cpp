@@ -1,39 +1,26 @@
 
-#include<photography.h>
+#include <iostream>
+using namespace std;
 
+#include "photography.h"
 
+Photography::Photography(int num_pic) : Service(0, 0.0, false) {
+    num_of_pic = num_pic;
 
-photography::photography(int num_pic){number_of_pic=num_pic;}// constructer
-
-double photography::calculateprice() {
-
-    int choice;
-    cout<<" how many pics do you want? ";// the client chose num of pic they want
-    cout<<"1) 50 pic ";
-    cout<<"2) 100 pic ";
-    cout<<"3) 300 pic ";
-    cin>>choice;
-
-    switch(choice) { // switch method
-        case 1:
-            return 20;
-            break;
-        case 2:
-            return 30;
-            break;
-        case 3:
-            return 50;
-            break;
-        default:
-            return 0;
-    }
-
+    if (num_pic <= 50)       price = 20;
+    else if (num_pic <= 100) price = 30;
+    else                     price = 50;
 }
 
-void photography::display(){
-    cout<<"______photography service_____"<<endl;
-    cout<<"serviceID:"<<serviceID<<endl;
-    cout<<"number of pictures:"<<number_of_pic<<endl;
-    cout<<"price:"<<calculateprice()<<endl;
+double Photography::calculatePrice() {
+    return price;
 }
 
+void Photography::display() {
+    cout << "__ Photography Service __" << endl;
+    cout << "Number of pictures: " << num_of_pic << endl;
+    cout << "Price: "             << price      << endl;
+}
+
+Photography::~Photography() {
+}
