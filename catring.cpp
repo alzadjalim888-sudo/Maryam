@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#include "Catring.h"
+#include "catring.h"
 #include "event.h"
 
 
