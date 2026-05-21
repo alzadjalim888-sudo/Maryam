@@ -1,6 +1,10 @@
 #include "decoration_class.h"
 
-Decoration::Decoration(int id,double p, bool a,string pt):Service(id,p,a) {
+int Decoration::counter=200;
+
+Decoration::Decoration(bool a,string pt):Service(0,p,a) {
+    counter++;
+    serviceID=counter;
     packageType = pt;
 
 }
