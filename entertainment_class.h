@@ -9,6 +9,7 @@ using namespace std;
 
 class Entertainment:public Service {
 private:
+    static int counter;
     string type;
 public:
     Entertainment(int id,double p,bool a,string t);
