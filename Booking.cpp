@@ -21,14 +21,44 @@ double Booking::total_Price() {
     total += photography.calculatePrice();
     return total;
 }
+oid Booking::setEvent(int type, string date, string time, int guestRange) {
+    TheEvent.setType(type);
+    TheEvent.setDate(date);
+    TheEvent.setTime(time);
+    TheEvent.setChoice(guestRange);
+}
+
+void Booking::setEntertainment(int choice) {
+    if (choice == 1) entertainment = Entertainment(1, 0.0, true, "DJ");
+    else if (choice == 2) entertainment = Entertainment(1, 0.0, true, "Firework");
+}
+
+void Booking::setDecoration(int choice) {
+    if (choice == 1) decoration = Decoration(1, 0.0, true, "Basic");
+    else if (choice == 2) decoration = Decoration(1, 0.0, true, "Premium");
+    else if (choice == 3) decoration = Decoration(1, 0.0, true, "Luxury");
+}
+
+void Booking::setCatring(int choice) {
+    catring = Catring(choice);
+}
+
+void Booking::setPhotography(int choice) {
+    photography = Photography(choice);
+}
 
 void Booking::display() {
     cout << "===== Your Total Bill Detail =====" << endl;
     TheEvent.display();
+    cout<<endl;
     entertainment.display();
+    cout<<endl;
     decoration.display();
+    cout<<endl;
     catring.display(TheEvent);
+    cout<<endl;
     photography.display();
-    cout << "====== Total Cost ======" << endl;
+    cout<<endl;
+    cout << "======== Total Cost =============" << endl;
     cout << "Total: $" << total_Price() << endl;
 }
