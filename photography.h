@@ -11,7 +11,7 @@ private:
 
 public:
     Photography(int num_pic);
-    void photooption;
+    void photooption();
     
 
     double calculatePrice() override; 
