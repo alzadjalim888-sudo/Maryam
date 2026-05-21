@@ -21,7 +21,7 @@ double Booking::total_Price() {
     total += photography.calculatePrice();
     return total;
 }
-oid Booking::setEvent(int type, string date, string time, int guestRange) {
+void Booking::setEvent(int type, string date, string time, int guestRange) {
     TheEvent.setType(type);
     TheEvent.setDate(date);
     TheEvent.setTime(time);
