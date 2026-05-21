@@ -31,6 +31,11 @@ private:
 public:
  Booking();
  void display();
+void setEvent(int type, string date, string time, int guestRange);
+ void setEntertainment(int choice);
+ void setDecoration(int choice);
+ void setCatring(int choice);
+ void setPhotography(int choice);
  double total_Price();
  ~Booking();
 };
