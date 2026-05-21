@@ -1,6 +1,6 @@
 
 #include<iostream>
-using std::cout;
+using namespace std;
 # include"entertainment_class.h"
 
 Entertainment::Entertainment(int id,double p,bool a,string t):Service(id,p,a) {
