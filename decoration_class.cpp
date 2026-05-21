@@ -21,12 +21,12 @@ double Decoration::calculatePrice() {
 }
 void Decoration::display() {
     cout<<"____Decoration_____"<<endl;
-    cout<<"Service ID:"<<serviceID<<endl;
-    cout<<"package:"<<packageType<<endl;
-    cout<<"availability:";
+    cout<<"Service ID: "<<serviceID<<endl;
+    cout<<"package: "<<packageType<<endl;
+    cout<<"Availability:";
     if (availability)
         cout<<"Available"<<endl;
     else
         cout<<"Unavailable"<<endl;
-    cout<<"Price:"<<calculatePrice()<<endl;
+    cout<<"Price: "<<calculatePrice()<<endl;
 }
