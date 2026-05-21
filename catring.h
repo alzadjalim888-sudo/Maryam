@@ -1,7 +1,7 @@
 
 #ifndef DESKTOP_CATRING_H
 #define DESKTOP_CATRING_H
-
+#include"event.h"
 #include "service_class.h"
 
 class Catring : public Service {
@@ -12,7 +12,7 @@ public:
     Catring(int num);
 
     double calculatePrice() override;
-    void display();
+    void display(Event& event);
     ~Catring();
 };
 
