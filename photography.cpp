@@ -4,13 +4,12 @@ using namespace std;
 
 #include "photography.h"
 
-Photography::Photography(int num_pic) : Service(0, 0.0, false) {
-    num_of_pic = num_pic;
+photography::photooption(){
+cout<<"pic the number of picturs you want:"<<endl;
+cout<<"1)50 pictures"<<endl;
+cout<<"2)100 pictures"<<endl;
+cout<<"3)300 pictures"<<endll;}
 
-    if (num_pic <= 50)       price = 20;
-    else if (num_pic <= 100) price = 30;
-    else                     price = 50;
-}
 
 double Photography::calculatePrice() {
     return price;
