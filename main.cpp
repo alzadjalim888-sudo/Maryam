@@ -1,109 +1,64 @@
 #include <iostream>
-using namespace std;
 #include "booking.h"
-#include "catring.h"
-#include "Client_Class.h"
-#include "decoration_class.h"
-#include "entertainment_class.h"
-#include "event.h"
-#include "photography.h"
-#include "service_class.h"
-#include "Venue_Class.h"
-int main() {
-    Booking booking;
-    /*cout<<"============================================="<<endl;
-    cout<<"=====Welcome to Event Booking================"<<endl;
-    cout<<"============================================="<<endl;
-     Client client;
-    string name;
-    cout<<"Enter your Name:"<<endl;
-    cin>> name;
-   client.setName(name);
-    string email;
-    cout<<"Enter your Email:"<<endl;
-    cin>> email;
-    client.setEmail(email);
-    int phone;
-    cout<<"Enter your Phone:"<<endl;
-    cin>> phone;
-    client.setNumber(phone);*/
-    cout<<"------------------------------------------"<<endl;
-    //////////////////////Atika class /////////////////
-    cout<<"------------------------------------------"<<endl;
-    cout<<"--- let's start planning your event ;) ---"<<endl;
-    cout<<"------------------------------------------"<<endl;
-    Event TheEvent;
+using namespace std;
 
-    int x,g;
-    string d,t;
+Booking::Booking() :
+    entertainment(0, 0.0, false, ""),
+    decoration(0, 0.0, false, ""),
+    photography(0),
+    catring(0),
+    total(0) {
+}                        
 
-    //type
-    cout <<"choose Event Type:"<< endl;
-    cout<<"1. Birthday"<< endl;
-    cout<<"2. Graduation"<< endl;
-    cout<<"3. Baby Shower"<< endl;
-    cin >>x;
+Booking::~Booking() {
+}
 
-    TheEvent.setType(x);
+double Booking::total_Price() {
+    total = 0;
+    total += entertainment.calculatePrice();
+    total += decoration.calculatePrice();
+    total += catring.calculatePrice();
+    total += photography.calculatePrice();
+    return total;
+}
+void Booking::setEvent(int type, string date, string time, int guestRange) {
+    TheEvent.setType(type);
+    TheEvent.setDate(date);
+    TheEvent.setTime(time);
+    TheEvent.setChoice(guestRange);
+}
 
-        //date
-    cout<<"Enter the Date: ";
-    cin>>d;
-    TheEvent.setDate(d);
+void Booking::setEntertainment(int choice) {
+    if (choice == 1) entertainment = Entertainment(1, 0.0, true, "DJ");
+    else if (choice == 2) entertainment = Entertainment(1, 0.0, true, "Firework");
+}
 
-        //time
-    cout<<"Enter the Time: ";
-    cin>>t;
-    TheEvent.setTime(t);
+void Booking::setDecoration(int choice) {
+    if (choice == 1) decoration = Decoration(1, 0.0, true, "Basic");
+    else if (choice == 2) decoration = Decoration(1, 0.0, true, "Premium");
+    else if (choice == 3) decoration = Decoration(1, 0.0, true, "Luxury");
+}
 
-        //guest range
-    cout<<" choose the number of expected guests: "<< endl;
-    cout<<"1. (50-100)"<<endl;
-    cout<<"2. (100-150)"<<endl;
-    cout<<"3. (150-200)"<<endl;
-    cin>>g;
+void Booking::setCatring(int choice) {
+    catring = Catring(choice);
+}
 
-    TheEvent.setChoice(x);
-    booking.setEvent(x,d,t,g);
-    //////////Deena////////////////////////
-    cout<<"------------------------------------------"<<endl;
-    Venue TheVenue;
-    TheVenue.VenueOptions();
-    cout << "Choose a Venue: ";
-    int v;
-    cin >> v;
-    TheVenue.setVenue(v);
+void Booking::setPhotography(int choice) {
+    photography = Photography(choice);
+}
 
-    cout << "Venue selected: " << TheVenue.getVenue_no() << endl;
-    ////////Atika////////////////////////////
-    cout<<"------------------------------------------"<<endl;
-
-    int choice;
-
-    cout << "Pick the number of pictures you want:" << endl;
-    cout << "1) 50 pictures" << endl;
-    cout << "2) 100 pictures" << endl;
-    cout << "3) 300 pictures" << endl;
-
-    cin >> choice;
-    booking.setPhotography(choice);
-
-    Photography photoService(choice);
- cout<<endl;
+void Booking::display() {
+    cout << "===== Your Total Bill Detail ========" << endl;
+    TheEvent.display();
     cout<<endl;
-    int cat;
-    cout << "Choose Catering (1-3): "; cin >> cat;
-    booking.setCatring(cat);
-
-    cout<<"------------------------------------------"<<endl;
-///////Teeb////////////////////////////////////////
-
-
-
-
-    //client.display();
-cout<<endl;
-    booking.display();
-    return 0;
-
+    entertainment.display();
+    cout<<endl;
+    decoration.display();
+    cout<<endl;
+    catring.display(TheEvent);
+    cout<<endl;
+    photography.display();
+    cout<<endl;
+    cout << "======== Total Cost =================" << endl;
+    cout << "Total: $" << total_Price() << endl;
 }
