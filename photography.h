@@ -1,4 +1,4 @@
-
+// photography.h
 #ifndef DESKTOP_PHOTOGRAPHY_H
 #define DESKTOP_PHOTOGRAPHY_H
 
@@ -11,11 +11,9 @@ private:
 
 public:
     Photography(int num_pic);
-    void photooption();
-    
 
-    double calculatePrice() override; 
-    void display();                    
+    double calculatePrice() override;  // only this is pure virtual in base
+    void display();                    // override removed
     ~Photography();
 };
 

@@ -23,7 +23,7 @@ public:
     void setType(int z);         // getters/setters
     string getType();
 
-   void setDate(string d);
+    void setDate(string d);
     string getDate();
 
     void setTime(string t);
@@ -36,7 +36,7 @@ public:
     string getrange();
 
 
-void display();           //display function
+    void display();           //display function
 
     ~Event(); //destructor
 

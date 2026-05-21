@@ -1,8 +1,10 @@
-
+// Catring.cpp
 #include <iostream>
 using namespace std;
 
 #include "Catring.h"
+#include "event.h"
+
 
 Catring::Catring(int num): Service(0, 0.0, false) {
     num_of_people = num;
@@ -17,10 +19,10 @@ double Catring::calculatePrice() {
     }
 }
 
-void Catring::display() {
-    cout << "__ Catring Service __" << endl;
-    cout << "Number of people: " << num_of_people   << endl;
-    cout << "Price: "           << calculatePrice() << endl;
+void Catring::display(Event& event) {
+    cout << "_____ Catring Service _____" << endl;
+    cout << "Number of people: " << event.getrange()  << endl;
+    cout << "Price: $"           << calculatePrice() << endl;
 }
 
 Catring::~Catring() {

@@ -1,24 +1,25 @@
-
+// photography.cpp
 #include <iostream>
 using namespace std;
 
 #include "photography.h"
 
-photography::photooption(){
-cout<<"pic the number of picturs you want:"<<endl;
-cout<<"1)50 pictures"<<endl;
-cout<<"2)100 pictures"<<endl;
-cout<<"3)300 pictures"<<endll;}
+Photography::Photography(int num_pic) : Service(0, 0.0, false) {
+    num_of_pic = num_pic;
 
+    if (num_pic <= 50)       price = 20;
+    else if (num_pic <= 100) price = 30;
+    else                     price = 50;
+}
 
 double Photography::calculatePrice() {
     return price;
 }
 
 void Photography::display() {
-    cout << "__ Photography Service __" << endl;
+    cout << "_____ Photography Service _____" << endl;
     cout << "Number of pictures: " << num_of_pic << endl;
-    cout << "Price: "             << price      << endl;
+    cout << "Price: $"             << price      << endl;
 }
 
 Photography::~Photography() {

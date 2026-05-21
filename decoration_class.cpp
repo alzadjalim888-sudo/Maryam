@@ -17,17 +17,16 @@ double Decoration::calculatePrice() {
     else {
         price=0;
     }
-     return price;
-    }
+    return price;
+}
 void Decoration::display() {
-        cout<<"....Decoration...."<<endl;
-        cout<<"Service ID:"<<serviceID<<endl;
-        cout<<"package:"<<packageType<<endl;
-        cout<<"availability:";
-        if (availability)
-            cout<<"Available"<<endl;
-        else
-            cout<<"Unavailable"<<endl;
-        cout<<"Price:"<<calculatePrice()<<endl;
-    }
-};
+    cout<<"____Decoration_____"<<endl;
+    cout<<"Service ID:"<<serviceID<<endl;
+    cout<<"package:"<<packageType<<endl;
+    cout<<"availability:";
+    if (availability)
+        cout<<"Available"<<endl;
+    else
+        cout<<"Unavailable"<<endl;
+    cout<<"Price:"<<calculatePrice()<<endl;
+}

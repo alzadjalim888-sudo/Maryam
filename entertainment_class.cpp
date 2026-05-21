@@ -1,9 +1,12 @@
-#include"entertainment_class.h"
+
+#include<iostream>
+using std::cout;
+# include"entertainment_class.h"
 
 Entertainment::Entertainment(int id,double p,bool a,string t):Service(id,p,a) {
     type=t;
 }
- double Entertainment::calculatePrice() {
+double Entertainment::calculatePrice() {
 
 
     if (type=="DJ") {
@@ -18,7 +21,7 @@ Entertainment::Entertainment(int id,double p,bool a,string t):Service(id,p,a) {
     return price;
 }
 void Entertainment::display() {
-    cout<<"....entertainment...."<<endl;
+    cout<<"____entertainment____"<<endl;
     cout<<"Service ID"<<serviceID<<endl;
     cout<<"Type"<<type<<endl;
     cout<<"Availability:";
