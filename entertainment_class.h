@@ -12,7 +12,7 @@ private:
     static int counter;
     string type;
 public:
-    Entertainment(int id,double p,bool a,string t);
+    Entertainment(double p,bool a,string t);
 
     double calculatePrice() override;
 
