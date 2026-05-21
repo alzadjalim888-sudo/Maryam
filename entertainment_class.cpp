@@ -3,7 +3,9 @@
 using namespace std;
 # include"entertainment_class.h"
 
-Entertainment::Entertainment(int id,double p,bool a,string t):Service(id,p,a) {
+Entertainment::Entertainment(double p,bool a,string t):Service(0,p,a) {
+    counter ++;
+    serviceID=counter;
     type=t;
 }
 double Entertainment::calculatePrice() {
