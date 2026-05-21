@@ -3,13 +3,30 @@
 using namespace std;
 
 #include "photography.h"
+Photography::Photography(int choice)
+    : Service(0, 0.0, false) {
 
-Photography::Photography(int num_pic) : Service(0, 0.0, false) {
-    num_of_pic = num_pic;
+    switch(choice) {
 
-    if (num_pic <= 50)       price = 20;
-    else if (num_pic <= 100) price = 30;
-    else                     price = 50;
+        case 1:
+            num_of_pic = 50;
+            price = 20;
+            break;
+
+        case 2:
+            num_of_pic = 100;
+            price = 30;
+            break;
+
+        case 3:
+            num_of_pic = 300;
+            price = 50;
+            break;
+
+        default:
+            num_of_pic = 0;
+            price = 0;
+    }
 }
 
 double Photography::calculatePrice() {
@@ -17,10 +34,13 @@ double Photography::calculatePrice() {
 }
 
 void Photography::display() {
-    cout << "_____ Photography Service _____" << endl;
+
+    cout << "__ Photography Service __" << endl;
     cout << "Number of pictures: " << num_of_pic << endl;
-    cout << "Price: $"             << price      << endl;
+    cout << "Price: " << price << endl;
 }
 
 Photography::~Photography() {
 }
+
+
