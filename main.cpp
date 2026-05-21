@@ -10,7 +10,10 @@ using namespace std;
 #include "service_class.h"
 #include "Venue_Class.h"
 int main() {
-   /* cout<<"=====Welcome to Event Booking====="<<endl;
+    Booking booking;
+    /*cout<<"============================================="<<endl;
+    cout<<"=====Welcome to Event Booking================"<<endl;
+    cout<<"============================================="<<endl;
      Client client;
     string name;
     cout<<"Enter your Name:"<<endl;
@@ -24,15 +27,14 @@ int main() {
     cout<<"Enter your Phone:"<<endl;
     cin>> phone;
     client.setNumber(phone);*/
+    cout<<"------------------------------------------"<<endl;
     //////////////////////Atika class /////////////////
-
     cout<<"------------------------------------------"<<endl;
     cout<<"--- let's start planning your event ;) ---"<<endl;
     cout<<"------------------------------------------"<<endl;
-
     Event TheEvent;
 
-    int x;
+    int x,g;
     string d,t;
 
     //type
@@ -59,13 +61,13 @@ int main() {
     cout<<"1. (50-100)"<<endl;
     cout<<"2. (100-150)"<<endl;
     cout<<"3. (150-200)"<<endl;
-    cin>>x;
+    cin>>g;
 
     TheEvent.setChoice(x);
-    TheEvent.display();
+    booking.setEvent(x,d,t,g);
     //////////Deena////////////////////////
+    cout<<"------------------------------------------"<<endl;
     Venue TheVenue;
-
     TheVenue.VenueOptions();
     cout << "Choose a Venue: ";
     int v;
@@ -74,16 +76,33 @@ int main() {
 
     cout << "Venue selected: " << TheVenue.getVenue_no() << endl;
     ////////Atika////////////////////////////
+    cout<<"------------------------------------------"<<endl;
 
+    int choice;
 
+    cout << "Pick the number of pictures you want:" << endl;
+    cout << "1) 50 pictures" << endl;
+    cout << "2) 100 pictures" << endl;
+    cout << "3) 300 pictures" << endl;
 
+    cin >> choice;
+    booking.setPhotography(choice);
 
+    Photography photoService(choice);
+ cout<<endl;
+    cout<<endl;
+    int cat;
+    cout << "Choose Catering (1-3): "; cin >> cat;
+    booking.setCatring(cat);
+
+    cout<<"------------------------------------------"<<endl;
+///////Teeb////////////////////////////////////////
 
 
 
 
     //client.display();
-    Booking booking;
+cout<<endl;
     booking.display();
     return 0;
 
