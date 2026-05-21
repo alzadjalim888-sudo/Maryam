@@ -1,3 +1,6 @@
+#ifndef Client_class_h
+#define Client_class_h
+
 #include <string>
 using namespace std;
 
@@ -19,3 +22,4 @@ public:
 
     ~Client();
 };
+#endif
