@@ -1,4 +1,4 @@
-// Catring.cpp
+
 #include <iostream>
 using namespace std;
 
@@ -39,7 +39,7 @@ switch (num_of_people) {
 void Catring::display() {
     cout << "_____ Catring Service _____" << endl;
     cout << "Number of people: " << people()  << endl;
-    cout << "Price: $"           << calculatePrice() << endl;
+    cout << "Price: "           << calculatePrice() << endl;
 }
 
 Catring::~Catring() {
