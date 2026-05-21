@@ -22,12 +22,12 @@ double Entertainment::calculatePrice() {
 }
 void Entertainment::display() {
     cout<<"____entertainment____"<<endl;
-    cout<<"Service ID"<<serviceID<<endl;
-    cout<<"Type"<<type<<endl;
+    cout<<"Service ID: "<<serviceID<<endl;
+    cout<<"Type: "<<type<<endl;
     cout<<"Availability:";
     if (availability)
         cout<<"available"<<endl;
     else
         cout<<"unavailable"<<endl;
-    cout<<"price"<<calculatePrice()<<endl;
+    cout<<"price: "<<calculatePrice()<<endl;
 }
