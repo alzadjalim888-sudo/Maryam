@@ -39,7 +39,6 @@ public:
     void display();           //display function
 
     ~Event(); //destructor
-
 };
 
 
