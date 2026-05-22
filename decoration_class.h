@@ -9,10 +9,9 @@ using namespace std;
 
 class Decoration:public Service {
 private:
-    static int counter;
     string packageType;
 public:
-    Decoration(double p,bool a,string pt);
+    Decoration(int id ,double p,bool a,string pt);
 
     double calculatePrice() override;
 
