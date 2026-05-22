@@ -16,6 +16,10 @@ Client::Client(string n, int num, string e) {
 void Client::setName(string n) {
     name = n;}
 
+string Client::getName() {
+    return name;
+}
+
 void Client::setNumber(int num) {
     number = num;}
 
