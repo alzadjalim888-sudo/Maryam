@@ -9,10 +9,9 @@ using namespace std;
 
 class Entertainment:public Service {
 private:
-    static int counter;
     string type;
 public:
-    Entertainment(double p,bool a,string t);
+     Entertainment(int id,double p,bool a,string t);
 
     double calculatePrice() override;
 
