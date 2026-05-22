@@ -6,7 +6,7 @@ Booking::Booking() :
     entertainment(0, 0.0, false, ""),
     decoration(0, 0.0, false, ""),
     photography(0),
-    catring(0),
+    catring(),
     total(0) {
 }                        
 
@@ -19,8 +19,14 @@ double Booking::total_Price() {
     total += decoration.calculatePrice();
     total += catring.calculatePrice();
     total += photography.calculatePrice();
+     total += venue.getPrice();
     return total;
 }
+
+void Booking::setClient(Client c){
+    client = c;
+}
+
 void Booking::setEvent(int type, string date, string time, int guestRange) {
     TheEvent.setType(type);
     TheEvent.setDate(date);
@@ -39,26 +45,64 @@ void Booking::setDecoration(int choice) {
     else if (choice == 3) decoration = Decoration(1, 0.0, true, "Luxury");
 }
 
+
 void Booking::setCatring(int choice) {
-    catring = Catring(choice);
+    catring = Catring(choice, TheEvent.getChoice());
 }
+
 
 void Booking::setPhotography(int choice) {
     photography = Photography(choice);
 }
 
+
+
+void Booking::setVenue(int v) {
+    venue.setVenue(v);
+}
+
+Booking::operator double() {
+    return total_Price();
+}
+
+
 void Booking::display() {
-    cout << "===== Your Total Bill Detail =====" << endl;
+    cout << "\n=====================================\n";
+    cout << "        FINAL BOOKING SUMMARY        \n";
+    cout << "=====================================\n\n";
+    client.display();
+    cout << "\n_________________________"<<endl;
+
+
     TheEvent.display();
     cout<<endl;
+    cout << "\n_________________________"<<endl;
+    cout << "VENUE SELECTED: ";
+
+    if (venue.getVenue_no() == 1)
+        cout << "Garden - 100 OMR\n";
+    else if (venue.getVenue_no() == 2)
+        cout << "Home - 50 OMR\n";
+    else if (venue.getVenue_no() == 3)
+        cout << "Hall - 200\n";
+
+
+
+    cout << "\n_________________________"<<endl;
     entertainment.display();
-    cout<<endl;
+
+    cout << "\n_________________________"<<endl;
     decoration.display();
-    cout<<endl;
+
+    cout << "\n_________________________"<<endl;
     catring.display(TheEvent);
-    cout<<endl;
+
+    cout << "\n_________________________"<<endl;
     photography.display();
-    cout<<endl;
-    cout << "======== Total Cost =============" << endl;
-    cout << "Total: $" << total_Price() << endl;
+
+
+
+    cout << "\n=====================================\n";
+    cout << "TOTAL PRICE: " << total_Price() <<" OMR" << endl;
+    cout << "=====================================\n";
 }
