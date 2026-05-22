@@ -14,6 +14,8 @@ public:
 
     int getVenue_no();
 
+    int getPrice();
+
     ~Venue();
 
 };
