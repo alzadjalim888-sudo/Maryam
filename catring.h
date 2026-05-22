@@ -9,10 +9,10 @@ private:
     int num_of_people;
 
 public:
-    Catring(int num);
-
+    Catring(int choice, int guestRange);
     double calculatePrice() override;
     void display(Event& event);
+    Catring();
     ~Catring();
 };
 
