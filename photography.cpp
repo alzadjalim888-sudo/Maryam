@@ -1,8 +1,8 @@
 // photography.cpp
 #include <iostream>
 using namespace std;
-
 #include "photography.h"
+
 Photography::Photography(int choice)
     : Service(0, 0.0, false) {
 
