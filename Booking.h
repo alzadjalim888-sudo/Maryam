@@ -3,12 +3,9 @@
 #define BOOKING_BOOKING_H
 
  //BOOKING_BOOKING_H
-
-
-
-
 # include <iostream>
 using namespace std;
+#include "Client_Class.h"
 #include "event.h"
 #include "decoration_class.h"
 #include "entertainment_class.h"
@@ -20,6 +17,7 @@ using namespace std;
 
 class Booking {
 private:
+  Client client;
  Event TheEvent;
  Entertainment entertainment;
  Decoration decoration; //composetaion
@@ -31,12 +29,18 @@ private:
 public:
  Booking();
  void display();
+ void setClient(Client c);
 void setEvent(int type, string date, string time, int guestRange);
  void setEntertainment(int choice);
  void setDecoration(int choice);
  void setCatring(int choice);
  void setPhotography(int choice);
  double total_Price();
+ void setVenue(int v);
+
+
+    operator double();
+
  ~Booking();
 };
 #endif
