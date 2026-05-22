@@ -15,6 +15,7 @@ public:
     Client(string n, int num, string e);
 
     void setName(string n);
+    string getName();
     void setNumber(int num);
     void setEmail(string e);
 
