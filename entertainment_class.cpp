@@ -3,9 +3,8 @@
 using namespace std;
 # include"entertainment_class.h"
 
-Entertainment::Entertainment(double p,bool a,string t):Service(0,p,a) {
-    counter ++;
-    serviceID=counter;
+
+Entertainment::Entertainment(int id,double p,bool a,string t):Service(id,p,a) {
     type=t;
 }
 double Entertainment::calculatePrice() {
@@ -24,12 +23,8 @@ double Entertainment::calculatePrice() {
 }
 void Entertainment::display() {
     cout<<"____entertainment____"<<endl;
-    cout<<"Service ID: "<<serviceID<<endl;
     cout<<"Type: "<<type<<endl;
-    cout<<"Availability:";
-    if (availability)
-        cout<<"available"<<endl;
-    else
-        cout<<"unavailable"<<endl;
     cout<<"price: "<<calculatePrice()<<endl;
 }
+
+
