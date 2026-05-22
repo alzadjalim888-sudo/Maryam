@@ -5,25 +5,51 @@ using namespace std;
 #include "Catring.h"
 #include "event.h"
 
-
-Catring::Catring(int num): Service(0, 0.0, false) {
-    num_of_people = num;
+Catring::Catring()
+    : Service(0, 0, false), num_of_people(0)
+{
 }
-
-double Catring::calculatePrice() {
-    switch (num_of_people) {
-        case 1: return 100;
-        case 2: return 130;
-        case 3: return 150;
-        default: return 0;
+Catring::Catring(int choice, int guestRange)
+    : Service(0,0.0,false)
+{
+    if (choice == 2) {
+        num_of_people = 0;
+        price = 0;
+    }
+    else {
+        switch (guestRange) {
+            case 1:
+                num_of_people = 100;
+                price = 100;
+                break;
+            case 2:
+                num_of_people = 150;
+                price = 130;
+                break;
+            case 3:
+                num_of_people = 200;
+                price = 150;
+                break;
+        }
     }
 }
 
-void Catring::display(Event& event) {
-    cout << "----Catring Service -----" << endl;
-    cout << "Number of people: " << event.getrange()  << endl;
-    cout << "Price: "           << calculatePrice() << endl;
+double Catring::calculatePrice() {
+    return price;
 }
+
+void Catring::display(Event& event) {
+    cout << "___Catering Service___" << endl;
+
+    if (price == 0)
+        cout << "Not selected" << endl;
+    else {
+        cout << "Included for guest range: "
+             << event.getrange() << endl;
+        cout << "Price: " << price << endl;
+    }
+}
+
 
 Catring::~Catring() {
 }
