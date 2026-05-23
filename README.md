@@ -17,6 +17,7 @@ Event Planner C++ Project, This program allows users to plan and book events by 
 - .h files
 - .cpp files
 - main.cpp
+- CMakeLists.txt
 - slide.pdf (project presentation)
 
 
