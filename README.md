@@ -1,4 +1,4 @@
-Event Booking System
+Event planning & booking system
 
 Event Planner (C++ Project), This program allows users to plan and book events by selecting event type, venue and additional services, and automatically calculating the total cost.
 
