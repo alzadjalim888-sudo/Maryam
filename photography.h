@@ -12,8 +12,8 @@ private:
 public:
     Photography(int num_pic);
 
-    double calculatePrice() override;  // only this is pure virtual in base
-    void display();                    // override removed
+    double calculatePrice() override;  
+    void display();                    
     ~Photography();
 };
 
