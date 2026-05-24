@@ -10,12 +10,12 @@ Booking::Booking() :
     total(0) {
 }                        
 
-Booking::~Booking() {
+Booking::~Booking() { //destructore
 }
 
 double Booking::total_Price() {
     total = 0;
-    total += entertainment.calculatePrice();
+    total += entertainment.calculatePrice(); 
     total += decoration.calculatePrice();
     total += catring.calculatePrice();
     total += photography.calculatePrice();
